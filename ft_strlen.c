@@ -6,11 +6,12 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:20:22 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/15 15:18:00 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/15 16:58:32 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 size_t	ft_strlen(const char *str)
 {
 	int	i;
@@ -18,7 +19,7 @@ size_t	ft_strlen(const char *str)
 	i = 0;
 	while (str[i])
 	{
-		i++ ;
+		i++;
 	}
 	return (i);
 }

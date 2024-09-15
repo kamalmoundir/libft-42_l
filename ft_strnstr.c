@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmoundir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 09:18:30 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/14 10:39:26 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/15 17:00:51 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -26,12 +28,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		{
 			while (big[pos + i] == little[i] && big[pos + i] && pos + i < len)
 			{
-				i ++;
+				i++;
 			}
 			if (little[i] == '\0')
 				return ((char *)big + pos);
 		}
-		pos ++;
+		pos++;
 	}
 	return (NULL);
 }
