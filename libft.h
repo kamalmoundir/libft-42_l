@@ -11,4 +11,7 @@ int     ft_atoi(const char *nptr);
 size_t   ft_strlcat(char *dest, const char *src, size_t size);
 void    *ft_calloc(size_t nmemb, size_t size);
 void    ft_bzero(void *s, size_t n);
+void    *ft_memset(void *b, int c, size_t len);
+void    *ft_memcpy(void *dst, const void *src, size_t n);
+char	*ft_strdup(const char *s);
 #endif
