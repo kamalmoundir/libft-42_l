@@ -24,5 +24,6 @@ int  ft_isascii(int c);
 int  ft_isprint(int c);
 int  ft_toupper(int c);
 char  ft_tolower(char c);
+char *ft_itoa(int n);
 int ft_isdigit(int c);
 #endif
