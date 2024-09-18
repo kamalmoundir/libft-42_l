@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 11:33:41 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/17 15:05:54 by kmoundir         ###   ########.fr       */
+/*   Created: 2024/09/17 18:20:04 by kmoundir          #+#    #+#             */
+/*   Updated: 2024/09/17 18:43:19 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <stdio.h>	
+#include <limits.h>
+
+int	len_int_positif(int n)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	int	i;
+	
+	i = 0;
+	if(n == 0)
 		return (1);
-	return (0);
+	while(n)
+	{
+		n /= 10;
+		i ++;
+	}
+	return (i);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*nbr;
+
+}
+
+int main()
+{
+	printf("%d \n%d",len_int(INT_MIN),INT_MIN);
 }

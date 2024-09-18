@@ -6,25 +6,18 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:00:43 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/13 10:16:25 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/17 17:53:45 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-void *ft_memset(void *str,int c,int n)
-{
+#include "libft.h"
 
-	char *s;
-	int i;
+void	*ft_memset(void *str, int c, size_t n)
+{
+	unsigned char	*s;
 
 	s = (unsigned char *)str;
-	i = 0;
-
-	while(i < n)
-	{
-		s[i] = (unsigned char)c;
-		printf("%i",s[i]);
-		i ++;
-	}
-	return (str);	
+	while (n--)
+		*s++ = (unsigned char)c;
+	return (str);
 }
