@@ -1,65 +1,38 @@
-#include "libft.h"
+
+
 #include <stdio.h>
 #include <string.h>
-#include<bsd/string.h>
+#include "libft.h"
 
-void test_ft_strlcat()
-{
-    char dest[50];
-    const char *src = " world";
-    size_t size;
-    size_t result;
-    size_t expected_result;
-    char expected_dest[50];
+void test_ft_strlcat(char *dest, const char *src, size_t size, size_t expected_len, const char *expected_dest) {
+    char buffer[100];
+    strcpy(buffer, dest);
+    size_t result = ft_strlcat(buffer, src, size);
 
-    // Test 1
-    strcpy(dest, "Hello");
-    size = 50;
-    result = ft_strlcat(dest, src, size);
-    strcpy(expected_dest, "Hello");
-    expected_result = strlcat(expected_dest, src, size);
-    printf("Expected: %zu, Actual: %zu, Dest: %s\n", expected_result, result, expected_dest);
-    printf("Test 1 - Expected: 11, Actual: %zu, Dest: %s\n", result, dest);
-
-    // Test 2
-    strcpy(dest, "Hello");
-    size = 10;
-    result = ft_strlcat(dest, src, size);
-    strcpy(expected_dest, "Hello");
-    expected_result = strlcat(expected_dest, src, size);
-    printf("Expected: %zu, Actual: %zu, Dest: %s\n", expected_result, result, expected_dest);
-    printf("Test 2 - Expected: 11, Actual: %zu, Dest: %s\n", result, dest);
-
-    // Test 3
-    strcpy(dest, "Hello");
-    size = 5;
-    result = ft_strlcat(dest, src, size);
-    strcpy(expected_dest, "Hello");
-    expected_result = strlcat(expected_dest, src, size);
-    printf("Expected: %zu, Actual: %zu, Dest: %s\n", expected_result, result, expected_dest);
-    printf("Test 3 - Expected: 11, Actual: %zu, Dest: %s\n", result, dest);
-
-    // Test 4
-    strcpy(dest, "");
-    size = 50;
-    result = ft_strlcat(dest, src, size);
-    strcpy(expected_dest, "");
-    expected_result = strlcat(expected_dest, src, size);
-    printf("Expected: %zu, Actual: %zu, Dest: %s\n", expected_result, result, expected_dest);
-    printf("Test 4 - Expected: 6, Actual: %zu, Dest: %s\n", result, dest);
-
-    // Test 5
-    strcpy(dest, "Hello");
-    size = 0;
-    result = ft_strlcat(dest, src, size);
-    strcpy(expected_dest, "Hello");
-    expected_result = strlcat(expected_dest, src, size);
-    printf("Expected: %zu, Actual: %zu, Dest: %s\n", expected_result, result, expected_dest);
-    printf("Test 5 - Expected: 11, Actual: %zu, Dest: %s\n", result, dest);
+    if (result == expected_len && strcmp(buffer, expected_dest) == 0) {
+        printf("Test passed\n");
+    } else {
+        printf("Test failed\n");
+        printf("Expected length: %zu, Got: %zu\n", expected_len, result);
+        printf("Expected dest: %s, Got: %s\n", expected_dest, buffer);
+    }
 }
 
-int main()
-{
-    test_ft_strlcat();
+int main() {
+    // Test 1
+    test_ft_strlcat("Hello", " World", 11, 11, "Hello World");
+
+    // Test 2
+    test_ft_strlcat("Hello", " World", 10, 11, "Hello Worl");
+
+    // Test 3
+    test_ft_strlcat("Hello", " World", 5, 11, "Hello");
+
+    // Test 4
+    test_ft_strlcat("", "Hello", 6, 5, "Hello");
+
+    // Test 5
+    test_ft_strlcat("Hello", "", 6, 5, "Hello");
+
     return 0;
 }

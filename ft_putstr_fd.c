@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 11:27:53 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/19 17:17:52 by kmoundir         ###   ########.fr       */
+/*   Created: 2024/09/19 10:48:23 by kmoundir          #+#    #+#             */
+/*   Updated: 2024/09/19 12:57:11 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+
+void ft_putstr_fd(char *s, int fd)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	if(s == NULL)
+		return ;
+	while(*s)
+		ft_putchar_fd(*s++, fd);
 }
+

@@ -3,24 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmoundir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 15:37:10 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/13 17:16:49 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/20 16:20:45 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const char *ptr;
+	const unsigned char	*ptr;
 
-	ptr = (const char *)s;
-	while(n)
+	ptr = (unsigned char *)s;
+	while (n)
 	{
-		if(*ptr == (const char)c)
+		if (*ptr == (unsigned char)c)
 			return ((void *)ptr);
-		n --;
-		ptr ++;
+		n--;
+		ptr++;
 	}
 	return (NULL);
 }

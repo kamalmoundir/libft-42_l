@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmoundir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 11:52:42 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/13 11:58:28 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/19 17:23:09 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_tolower(int c)
 {
-	if (c <= 90 && c >= 65)
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }

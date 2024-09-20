@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 11:27:53 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/19 17:17:52 by kmoundir         ###   ########.fr       */
+/*   Created: 2024/09/20 17:55:15 by kmoundir          #+#    #+#             */
+/*   Updated: 2024/09/20 18:13:16 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }

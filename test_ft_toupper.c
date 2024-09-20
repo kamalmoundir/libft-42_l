@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "ft_toupper.c"
+#include "libft.h"
 
 void test_ft_toupper()
 {
@@ -31,7 +31,7 @@ void test_ft_toupper()
 
     // Test non-alphabetic characters (should remain unchanged)
     int non_alpha[] = { '1', '!', ' ', '\n', '0', '@', '[', '`', '{', '~' };
-    for (int i = 0; i < sizeof(non_alpha) / sizeof(non_alpha[0]); i++)
+    for (unsigned int  i = 0; i < sizeof(non_alpha) / sizeof(non_alpha[0]); i++)
     {
         if (ft_toupper(non_alpha[i]) != non_alpha[i])
         {
@@ -49,3 +49,4 @@ int main()
     test_ft_toupper();
     return 0;
 }
+
