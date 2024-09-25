@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 10:23:01 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/16 11:15:33 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/21 15:16:23 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;
+	size_t	str_len;
 
 	i = 0;
-	sub = (char *)malloc((len +1) * sizeof (char));
+	if (!s)
+		return (NULL);
+	str_len = ft_strlen(s);
+	if (start >= str_len)
+		return (ft_strdup(""));
+	if (start + len > str_len)
+		len = str_len - start;
+	sub = (char *)malloc((len + 1) * sizeof(char));
 	if (!sub)
 		return (NULL);
 	while (i < len && s[start + i])

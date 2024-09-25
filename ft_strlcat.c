@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 13:52:50 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/19 17:12:22 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/23 13:48:29 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	len_src = ft_strlen(src);
 	len_dest = ft_strlen(dest);
 	len = len_src + len_dest;
+	if (size == 0)
+		return (len_src);
 	if (size <= len_dest)
 		return (size + len_src);
 	i = 0;
-	while (src[i] && (len_dest + i) < size)
+	while (src[i] && (len_dest + i) < size - 1)
 	{
 		dest[len_dest + i] = src[i];
 		i++;

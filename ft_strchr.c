@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 12:03:12 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/19 17:51:45 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/23 14:15:13 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (s == NULL)
-		return (NULL);
+	if (c >= 256)
+		c = c % 256;
 	while (*s)
 	{
 		if (*s == (char)c)
 			return ((char *)s);
-		s ++;
+		s++;
 	}
-	if(c == '\0')
+	if (c == '\0')
 		return ((char *)s);
 	return (NULL);
 }

@@ -6,13 +6,13 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:20:04 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/18 17:08:35 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/21 17:54:08 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len_int(int n)
+int	len_int(long n)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ int	len_int(int n)
 	return (len);
 }
 
-void	str_implement(char *nbr, int n, int len, int is_negative)
+void	str_implement(char *nbr, long n, int len, int is_negative)
 {
 	nbr[len] = '\0';
 	len--;
@@ -44,18 +44,18 @@ void	str_implement(char *nbr, int n, int len, int is_negative)
 char	*ft_itoa(int n)
 {
 	char	*nbr;
+	long	long_n;
 	int		len;
 	int		is_negative;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	is_negative = (n < 0);
+	long_n = (long)n;
+	is_negative = (long_n < 0);
 	if (is_negative)
-		n *= -1;
-	len = len_int(n) + is_negative;
+		long_n *= -1;
+	len = len_int(long_n) + is_negative;
 	nbr = (char *)malloc((len + 1) * sizeof(char));
 	if (!nbr)
 		return (NULL);
-	str_implement(nbr, n, len, is_negative);
+	str_implement(nbr, long_n, len, is_negative);
 	return (nbr);
 }

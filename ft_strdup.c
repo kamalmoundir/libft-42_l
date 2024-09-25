@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:59:06 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/15 18:22:54 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/23 14:01:47 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 char	*ft_strdup(const char *s)
 {
-	
 	char	*str;
 	char	*tmp;
 	size_t	len;
 
 	len = ft_strlen(s);
-	str=(char *)malloc((len +1) * sizeof(char));
-	if(!str)
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
 	tmp = str;
-	while(*s)
+	while (*s)
 	{
-		*(tmp ++) = *(s ++);
+		*(tmp++) = *(s++);
 	}
 	*tmp = '\0';
 	return (str);
 }
-

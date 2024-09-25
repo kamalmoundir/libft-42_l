@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:57:54 by kmoundir          #+#    #+#             */
-/*   Updated: 2024/09/17 14:39:41 by kmoundir         ###   ########.fr       */
+/*   Updated: 2024/09/21 17:16:01 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ char	**ft_split(char const *s, char c)
 	char	**array;
 	char	*word_start;
 
+	if (!s)
+		return (NULL);
 	array = (char **)malloc((ft_count_word(s, c) + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
@@ -67,9 +69,8 @@ char	**ft_split(char const *s, char c)
 			word_start = (char *)s;
 			while (*s != c && *s)
 				s ++;
-			if (add_str(array, word_start, (s - word_start), i))
+			if (!add_str(array, word_start, (s - word_start), i++))
 				return (NULL);
-			i ++;
 		}
 	}
 	array[i] = NULL;
